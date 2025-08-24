@@ -63,6 +63,9 @@ services:
       - ./src:/var/www/html/wp-content:rw
     networks:
       - internal
+    user: "${LOCAL_UID}:${LOCAL_GID}"
+    group_add:
+      - "${LOCAL_GID}"
 
 volumes:
   dbdata:
